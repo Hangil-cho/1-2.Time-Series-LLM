@@ -5,3 +5,10 @@
 2. LLM 역사
 3. LLM 실습
 4. 생성형 AI 실습 - 뭐 할건지 고민....
+
+
+kaggle - https://www.kaggle.com/competitions/llm-detect-ai-generated-text/overview
+
+1. 텍스트 분석 -> 텍스트 분석 기술 이용 / 에세이의 문장 구조, 어휘, 문법 등을 분석
+2. 인공지능 학습 -> 인공지능 모델을 학습시켜 실제 에세이와 생성형 AI가 만든 에세이를 구분(Google AutoML 등 => 90일 free)
+3. 인간 평가 -> 사람이 직접하는거 (관련없음)
