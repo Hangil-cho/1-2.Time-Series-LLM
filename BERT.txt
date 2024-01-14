@@ -7,6 +7,38 @@ gpt-1
 
 LM = 쭉 읽어서 학습 후 예측하는 방식
 BERT = 문맥을(양방향) 읽어서 가려진 것을 찾아내는 방식
+- 대용량 corpus data로 모델을 학습시킨 후(pre-tuning), task에 알맞게 전이학습(fine-tuning)을 하는 모델
 - 질의응답 같은 데이터를 주로 활용
-word piece embedding
-단어 토큰
+*pre tuning
+1. 단어 토큰 embeddings : word piece embedding
+2. segment embeddings : 문장별 토큰
+3. position embeddings: sin, cos (가중치를 두면서 계산) 
+=>MLM, NSP
+1. MLM(Masked Language Model): 가려서 학습(단어별)
+2. NSP(Next Sentence Prediction): 두 문장이 연결되어있는가를 따지는 모델
+
+*fine tuning (GPT는 없음)
+이런 구조 덕분에 자은 단위로 학습이 가능함
+(더 적은 시간, 데이터 사용으로도 학습 가능)
+1. embedding된 후 transformer 통과되며녀 fine tuning 시작
+2. class label만 추
+
+-> BERT로 구성된 언어모델의 장점
+LSTM, CNN 등의 구조 없이 학습 및 수행 가능
+
+BERT_base 구조
+- 12개의 Transformer Block
+- 768개의 Hidden Size
+- 12개의 Self-attention heads
+ 
+https://huggingface.co/bert-base-multilingual-cased
+
+*Ablation Study -> model 개발시 매우 중
+- BERT에서 각 요소 중 하나씩 빼보며 중요도를 판별하는 과정
+
+
+
+
+
+
+
