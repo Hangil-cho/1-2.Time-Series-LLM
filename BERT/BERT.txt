@@ -31,7 +31,7 @@ BERT_base 구조
 - 768개의 Hidden Size
 - 12개의 Self-attention heads
  
-https://huggingface.co/bert-base-multilingual-cased
+https://github.com/google-research/bert
 
 *Ablation Study -> model 개발시 매우 중
 - BERT에서 각 요소 중 하나씩 빼보며 중요도를 판별하는 과정
