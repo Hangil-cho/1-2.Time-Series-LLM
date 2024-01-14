@@ -1,0 +1,67 @@
+First Order system
+- 현재 시간의 상태가 이전 시간의 상태와, 현재의 입력에 관계가 있는 경우
+
+State - space Model
+===>
+***x_t = f(x_t-1, u_t)           (u_t = 입력) (x_t = hidden layer의 state)
+***관측 가능 => 출력 y_t = h(x_t)
+==============
+
+RNN은 위 과정중 x_t-1에서 계속 피드백해서 학습
+
+u -> x -> y
+
+RNN을 위한 중요한 초기 조건 x_0
+
+===============================
+RNN에서 전 상태를 학습하여 예측하는 모델
+First-order Markov model
+x_t = f(x_t-1, u_t)
+y_t = h(x_t)
+--------------------------------->
+뉴럴네트워크에 근사
+x_t = σ(W_xx*x_t-1 + W_xu*u_t + b_x)
+y_t = σ(W_yx*x_t + b_y)
+
+RNN: training
+=> problem types
+
+many - many => 번역
+many - one  => 예측(시계열)
+one - many  => 생
+
+================================
+RNN : exploding (vanishing) gradient
+W_xx > 1 or < 1 => NoN, inf or 0 (update 불가)
+=> loss갸 inf일 경우 학습 불가능
+
+해결책 gradient clipping => 구간을 가두는 것 => 근본적인것 수정 어려움
+특히, vanishing gradient는 어떤 원인인지 구분이 어려움
+=>LSTM로 해결
+RNN에서 gate 구조를 추가
+input gate: 얼마나 활용할 것인가
+forget gate: 얼마나 잊어버릴것인가
+cell: 위 gate의 데이터를 섞는 곳
+output gate: (input+forget -> cell+)
+
+*GRU = simple LSTM
+cell이 없음
+LSTM보다 training time 절약
+LSTM보다 성능은???? 모름 - task마다 다름 (실제로 아무도 모른다고 함)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
